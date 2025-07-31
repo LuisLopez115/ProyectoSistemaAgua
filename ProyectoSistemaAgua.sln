@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoSistemaAgua", "ProyectoSistemaAgua\ProyectoSistemaAgua.csproj", "{DFE3088C-5852-41AF-9865-5F0EB830C107}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFE3088C-5852-41AF-9865-5F0EB830C107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE3088C-5852-41AF-9865-5F0EB830C107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE3088C-5852-41AF-9865-5F0EB830C107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE3088C-5852-41AF-9865-5F0EB830C107}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAA8B91C-F97E-4BE0-9FEA-B6EF8D5543C8}
+	EndGlobalSection
+EndGlobal

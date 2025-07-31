@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|c:\\users\\lluis\\onedrive\\documentos\\desarollo webintegral\\proyectosistemaagua\\proyectosistemaagua\\controllers\\materiaprimacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|solutionrelative:proyectosistemaagua\\controllers\\materiaprimacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|c:\\users\\lluis\\onedrive\\documentos\\desarollo webintegral\\proyectosistemaagua\\proyectosistemaagua\\dto\\materiaprimadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|solutionrelative:proyectosistemaagua\\dto\\materiaprimadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|c:\\users\\lluis\\onedrive\\documentos\\desarollo webintegral\\proyectosistemaagua\\proyectosistemaagua\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE3088C-5852-41AF-9865-5F0EB830C107}|ProyectoSistemaAgua\\ProyectoSistemaAgua.csproj|solutionrelative:proyectosistemaagua\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemaAgua\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "ProyectoSistemaAgua\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T18:40:00.697Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MateriaPrimaController.cs",
+              "DocumentMoniker": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\Controllers\\MateriaPrimaController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemaAgua\\Controllers\\MateriaPrimaController.cs",
+              "ToolTip": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\Controllers\\MateriaPrimaController.cs",
+              "RelativeToolTip": "ProyectoSistemaAgua\\Controllers\\MateriaPrimaController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T21:20:12.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MateriaPrimaDto.cs",
+              "DocumentMoniker": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\DTO\\MateriaPrimaDto.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemaAgua\\DTO\\MateriaPrimaDto.cs",
+              "ToolTip": "C:\\Users\\lluis\\OneDrive\\Documentos\\Desarollo webIntegral\\ProyectoSistemaAgua\\ProyectoSistemaAgua\\DTO\\MateriaPrimaDto.cs",
+              "RelativeToolTip": "ProyectoSistemaAgua\\DTO\\MateriaPrimaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T21:19:12.689Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
