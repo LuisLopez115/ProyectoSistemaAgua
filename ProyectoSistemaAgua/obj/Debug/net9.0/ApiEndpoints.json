@@ -16,35 +16,55 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.MateriaPrimaController",
-    "Method": "GetMateriasDTO",
-    "RelativePath": "api/MateriaPrima",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.CompraController",
+    "Method": "Get",
+    "RelativePath": "api/Compra",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.Models.Compra, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.MateriaPrimaController",
-    "Method": "CrearMateriaPrima",
-    "RelativePath": "api/MateriaPrima",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.CompraController",
+    "Method": "Post",
+    "RelativePath": "api/Compra",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "ProyectoSistemaAgua.DTO.MateriaPrimaDto",
+        "Name": "compra",
+        "Type": "ProyectoSistemaAgua.Models.Compra",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ProyectoSistemaAgua.Models.Compra",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.MateriaPrimaController",
-    "Method": "ActualizarMateriaPrima",
-    "RelativePath": "api/MateriaPrima/{id}",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.CompraController",
+    "Method": "Put",
+    "RelativePath": "api/Compra/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -55,17 +75,17 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "ProyectoSistemaAgua.DTO.MateriaPrimaDto",
+        "Name": "compraActualizada",
+        "Type": "ProyectoSistemaAgua.Models.Compra",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.MateriaPrimaController",
-    "Method": "EliminarMateriaPrima",
-    "RelativePath": "api/MateriaPrima/{id}",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.CompraController",
+    "Method": "Delete",
+    "RelativePath": "api/Compra/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -79,9 +99,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.MateriaPrimaController",
-    "Method": "GetMateriasPrimas",
-    "RelativePath": "api/MateriaPrima/completo",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.DashboardController",
+    "Method": "GetDashboardAdmin",
+    "RelativePath": "api/Dashboard/admin",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -89,34 +109,101 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.ProductoController",
-    "Method": "CrearProducto",
-    "RelativePath": "api/Producto",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.ProduccionController",
+    "Method": "ProducirKit",
+    "RelativePath": "api/Produccion",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "ProyectoSistemaAgua.DTO.ProductoDetalleAdminDTO",
-        "IsRequired": true
+        "Name": "productoFinalId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "cantidadProduccion",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "ProyectoSistemaAgua.Controllers.ProductoController",
-    "Method": "ObtenerProductos",
+    "Method": "Get",
     "RelativePath": "api/Producto",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.Models.Producto, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.ProductoController",
+    "Method": "Post",
+    "RelativePath": "api/Producto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "producto",
+        "Type": "ProyectoSistemaAgua.Models.Producto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProyectoSistemaAgua.Models.Producto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.ProductoController",
+    "Method": "Get",
+    "RelativePath": "api/Producto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProyectoSistemaAgua.Models.Producto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ProyectoSistemaAgua.Controllers.ProveedoresController",
-    "Method": "GetProveedores",
+    "Method": "ObtenerProveedores",
     "RelativePath": "api/Proveedores",
     "HttpMethod": "GET",
     "IsController": true,
@@ -139,6 +226,142 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.ProveedoresController",
+    "Method": "ActualizarProveedor",
+    "RelativePath": "api/Proveedores/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "proveedorActualizado",
+        "Type": "ProyectoSistemaAgua.Models.Proveedor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.ProveedoresController",
+    "Method": "EliminarProveedor",
+    "RelativePath": "api/Proveedores/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.RecetaController",
+    "Method": "ActualizarReceta",
+    "RelativePath": "api/Receta/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "receta",
+        "Type": "ProyectoSistemaAgua.Models.Receta",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.RecetaController",
+    "Method": "EliminarReceta",
+    "RelativePath": "api/Receta/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.RecetaController",
+    "Method": "Get",
+    "RelativePath": "api/Receta/{productoFinalId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productoFinalId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.Models.Receta, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.RecetaController",
+    "Method": "CrearRecetaCompleta",
+    "RelativePath": "api/Receta/crearRecetaCompleta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recetasDto",
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.DTO.RecetaDto, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.RecetaController",
+    "Method": "GetProductosConReceta",
+    "RelativePath": "api/Receta/ProductosConReceta",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.Models.Producto, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ProyectoSistemaAgua.Controllers.UsuariosController",
@@ -205,6 +428,27 @@
   },
   {
     "ContainingType": "ProyectoSistemaAgua.Controllers.UsuariosController",
+    "Method": "CambiarPassword",
+    "RelativePath": "api/Usuarios/{id}/password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nuevaPassword",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProyectoSistemaAgua.Controllers.UsuariosController",
     "Method": "CrearUsuario",
     "RelativePath": "api/Usuarios/crear",
     "HttpMethod": "POST",
@@ -220,72 +464,45 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.VentasController",
-    "Method": "CrearVenta",
-    "RelativePath": "api/Ventas",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.VentaController",
+    "Method": "Post",
+    "RelativePath": "api/Venta",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "ProyectoSistemaAgua.DTO.CrearVentaDto",
+        "Name": "venta",
+        "Type": "ProyectoSistemaAgua.Models.Venta",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.VentasController",
-    "Method": "ObtenerVentas",
-    "RelativePath": "api/Ventas",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.VentaController",
+    "Method": "Get",
+    "RelativePath": "api/Venta",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.VentasController",
-    "Method": "ObtenerVentaPorId",
-    "RelativePath": "api/Ventas/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
+        "Type": "System.Collections.Generic.List\u00601[[ProyectoSistemaAgua.Models.Venta, ProyectoSistemaAgua, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.VentasController",
-    "Method": "ActualizarVenta",
-    "RelativePath": "api/Ventas/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "ProyectoSistemaAgua.DTO.CrearVentaDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ProyectoSistemaAgua.Controllers.VentasController",
-    "Method": "EliminarVenta",
-    "RelativePath": "api/Ventas/{id}",
+    "ContainingType": "ProyectoSistemaAgua.Controllers.VentaController",
+    "Method": "Delete",
+    "RelativePath": "api/Venta/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

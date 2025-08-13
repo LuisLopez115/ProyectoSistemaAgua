@@ -6,6 +6,7 @@
         public string Nombre { get; set; } = string.Empty;
         public string Descripcion { get; set; } = string.Empty;
         public string ImagenUrl { get; set; } = string.Empty;
+        public string Documentacion { get; set; } = string.Empty; // <-- ¡AGREGA ESTO!
 
         public List<IngredienteDetalleDTO> Receta { get; set; } = new();
         public decimal CostoTotal { get; set; }

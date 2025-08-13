@@ -2,18 +2,15 @@
 {
     public class Producto
     {
-        public int Id { get; set; } 
 
-       public string Nombre { get; set; }  
+        public int Id { get; set; }
+        public string? Nombre { get; set; }
+        public string? Descripcion { get; set; }
+        public decimal PrecioVenta { get; set; }
+        public decimal CostoPromedio { get; set; }  // para el método de costeo
+        public int Stock { get; set; }
+        public string? Categoria { get; set; }
 
-        public string Descripcion { get; set; } 
-
-
-        public string ImagenUrl { get; set; }   
-
-        public string Documentacion { get; set; }
-
-        public ICollection<ProductoMateriaPrima> Receta { get; set; }
 
     }
 }

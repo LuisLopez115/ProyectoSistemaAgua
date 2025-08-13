@@ -5,26 +5,24 @@
 namespace ProyectoSistemaAgua.Migrations
 {
     /// <inheritdoc />
-    public partial class initialCreate : Migration
+    public partial class Initial2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "Recetas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rol = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ProductoFinalId = table.Column<int>(type: "int", nullable: false),
+                    ProductoComponenteId = table.Column<int>(type: "int", nullable: false),
+                    Cantidad = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.Id);
+                    table.PrimaryKey("PK_Recetas", x => x.Id);
                 });
         }
 
@@ -32,7 +30,7 @@ namespace ProyectoSistemaAgua.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Recetas");
         }
     }
 }

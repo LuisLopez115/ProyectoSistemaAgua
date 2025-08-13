@@ -169,3 +169,4 @@ C:\Users\lluis\OneDrive\Documentos\Desarollo webIntegral\ProyectoSistemaAgua\Pro
 C:\Users\lluis\OneDrive\Documentos\Desarollo webIntegral\ProyectoSistemaAgua\ProyectoSistemaAgua\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\lluis\OneDrive\Documentos\Desarollo webIntegral\ProyectoSistemaAgua\ProyectoSistemaAgua\bin\Debug\net9.0\BCrypt.Net-Next.dll
 C:\Users\lluis\OneDrive\Documentos\Desarollo webIntegral\ProyectoSistemaAgua\ProyectoSistemaAgua\bin\Debug\net9.0\BouncyCastle.Crypto.dll
+C:\Users\lluis\OneDrive\Documentos\Desarollo webIntegral\ProyectoSistemaAgua\ProyectoSistemaAgua\obj\Debug\net9.0\ProyectoSistemaAgua.sourcelink.json

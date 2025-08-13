@@ -11,8 +11,8 @@ using ProyectoSistemaAgua.Models;
 namespace ProyectoSistemaAgua.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250720014732_initialCreate")]
-    partial class initialCreate
+    [Migration("20250807200349_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,28 @@ namespace ProyectoSistemaAgua.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ProyectoSistemaAgua.Models.Proveedor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Proveedores");
+                });
+
             modelBuilder.Entity("ProyectoSistemaAgua.Models.Usuarios", b =>
                 {
                     b.Property<int>("Id")
@@ -32,13 +54,13 @@ namespace ProyectoSistemaAgua.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Contraseña")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Correo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rol")

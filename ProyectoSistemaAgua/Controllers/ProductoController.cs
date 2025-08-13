@@ -18,46 +18,28 @@ namespace ProyectoSistemaAgua.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CrearProducto([FromBody] ProductoDetalleAdminDTO dto)
+        [HttpGet]
+        public async Task<ActionResult<List<Producto>>> Get()
         {
-            var producto = new Producto
-            {
-                Nombre = dto.Nombre,
-                Descripcion = dto.Descripcion,
-                ImagenUrl = dto.ImagenUrl,
-                Receta = new List<ProductoMateriaPrima>()
-            };
+            return await _context.Productos.ToListAsync();
+        }
 
-            foreach (var ingrediente in dto.Receta)
-            {
-                var materia = await _context.MateriaPrima.FindAsync(ingrediente.MateriaPrimaId);
-                if (materia == null)
-                    return NotFound(new { mensaje = $"Materia prima ID {ingrediente.MateriaPrimaId} no encontrada" });
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Producto>> Get(int id)
+        {
+            var producto = await _context.Productos.FindAsync(id);
+            if (producto == null) return NotFound();
+            return producto;
+        }
 
-                producto.Receta.Add(new ProductoMateriaPrima
-                {
-                    MateriaPrimaId = ingrediente.MateriaPrimaId,
-                    Cantidad = (int)ingrediente.Cantidad
-                });
-            }
-
+        [HttpPost]
+        public async Task<ActionResult<Producto>> Post(Producto producto)
+        {
             _context.Productos.Add(producto);
             await _context.SaveChangesAsync();
-
-            return Ok(new { mensaje = "Producto creado correctamente", producto });
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> ObtenerProductos()
-        {
-            var productos = await _context.Productos
-                .Include(p => p.Receta)
-                .ThenInclude(r => r.MateriaPrima)
-                .ToListAsync();
-
-            // Devuelve el listado sin filtro por rol
-            return Ok(productos);
+            return CreatedAtAction(nameof(Get), new { id = producto.Id }, producto);
         }
     }
+
 }
+

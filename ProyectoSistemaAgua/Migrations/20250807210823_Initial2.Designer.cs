@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoSistemaAgua.Models;
 
@@ -11,9 +12,11 @@ using ProyectoSistemaAgua.Models;
 namespace ProyectoSistemaAgua.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250807210823_Initial2")]
+    partial class Initial2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,10 +125,6 @@ namespace ProyectoSistemaAgua.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductoComponenteId");
-
-                    b.HasIndex("ProductoFinalId");
-
                     b.ToTable("Recetas");
                 });
 
@@ -184,25 +183,6 @@ namespace ProyectoSistemaAgua.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ventas");
-                });
-
-            modelBuilder.Entity("ProyectoSistemaAgua.Models.Receta", b =>
-                {
-                    b.HasOne("ProyectoSistemaAgua.Models.Producto", "ProductoComponente")
-                        .WithMany()
-                        .HasForeignKey("ProductoComponenteId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSistemaAgua.Models.Producto", "ProductoFinal")
-                        .WithMany()
-                        .HasForeignKey("ProductoFinalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("ProductoComponente");
-
-                    b.Navigation("ProductoFinal");
                 });
 #pragma warning restore 612, 618
         }

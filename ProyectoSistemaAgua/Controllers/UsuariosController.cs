@@ -60,8 +60,6 @@ namespace ProyectoSistemaAgua.Controllers
 
 
 
-
-        // PUT: api/usuarios/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarUsuario(int id, [FromBody] Usuarios usuarioActualizado)
         {
@@ -71,15 +69,16 @@ namespace ProyectoSistemaAgua.Controllers
             {
                 return NotFound(new { mensaje = "Usuario no encontrado" });
             }
+
+            // Solo actualizá el password si viene uno nuevo
             if (!string.IsNullOrWhiteSpace(usuarioActualizado.Password))
             {
                 usuario.Password = BCrypt.Net.BCrypt.HashPassword(usuarioActualizado.Password);
             }
 
-            // Actualizar campos
+            // Actualizar otros campos
             usuario.Nombre = usuarioActualizado.Nombre;
             usuario.Correo = usuarioActualizado.Correo;
-            usuario.Password = usuarioActualizado.Password;
             usuario.Rol = usuarioActualizado.Rol;
             usuario.Telefono = usuarioActualizado.Telefono;
 
@@ -88,23 +87,34 @@ namespace ProyectoSistemaAgua.Controllers
             return Ok(new { mensaje = "Usuario actualizado correctamente", usuario });
         }
 
+
+        [HttpPut("{id}/password")]
+        public async Task<IActionResult> CambiarPassword(int id, [FromBody] string nuevaPassword)
+        {
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null) return NotFound();
+
+            usuario.Password = BCrypt.Net.BCrypt.HashPassword(nuevaPassword);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { mensaje = "Contraseña actualizada" });
+        }
+
+
+
         // DELETE: api/usuarios/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarUsuario(int id)
         {
             var usuario = await _context.Usuarios.FindAsync(id);
-
             if (usuario == null)
-            {
                 return NotFound(new { mensaje = "Usuario no encontrado" });
-            }
 
             _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
 
             return Ok(new { mensaje = "Usuario eliminado correctamente" });
         }
-
 
     }
 }

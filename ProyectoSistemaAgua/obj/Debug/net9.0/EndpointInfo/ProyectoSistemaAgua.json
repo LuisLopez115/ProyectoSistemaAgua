@@ -36,63 +36,94 @@
         }
       }
     },
-    "/api/MateriaPrima/completo": {
+    "/api/Compra": {
       "get": {
         "tags": [
-          "MateriaPrima"
+          "Compra"
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/MateriaPrima": {
-      "get": {
-        "tags": [
-          "MateriaPrima"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Compra"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Compra"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Compra"
+                  }
+                }
+              }
+            }
           }
         }
       },
       "post": {
         "tags": [
-          "MateriaPrima"
+          "Compra"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Compra"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Compra"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Compra"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/MateriaPrima/{id}": {
+    "/api/Compra/{id}": {
       "put": {
         "tags": [
-          "MateriaPrima"
+          "Compra"
         ],
         "parameters": [
           {
@@ -109,17 +140,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MateriaPrimaDto"
+                "$ref": "#/components/schemas/Compra"
               }
             }
           }
@@ -132,13 +163,55 @@
       },
       "delete": {
         "tags": [
-          "MateriaPrima"
+          "Compra"
         ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Dashboard/admin": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Produccion": {
+      "post": {
+        "tags": [
+          "Produccion"
+        ],
+        "parameters": [
+          {
+            "name": "productoFinalId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cantidadProduccion",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -153,6 +226,42 @@
       }
     },
     "/api/Producto": {
+      "get": {
+        "tags": [
+          "Producto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Producto"
@@ -161,34 +270,81 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDetalleAdminDTO"
+                "$ref": "#/components/schemas/Producto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDetalleAdminDTO"
+                "$ref": "#/components/schemas/Producto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDetalleAdminDTO"
+                "$ref": "#/components/schemas/Producto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              }
+            }
           }
         }
-      },
+      }
+    },
+    "/api/Producto/{id}": {
       "get": {
         "tags": [
           "Producto"
         ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              }
+            }
           }
         }
       }
@@ -230,6 +386,259 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Proveedores/{id}": {
+      "put": {
+        "tags": [
+          "Proveedores"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Proveedor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Proveedor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Proveedor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Proveedores"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Receta/crearRecetaCompleta": {
+      "post": {
+        "tags": [
+          "Receta"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RecetaDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RecetaDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RecetaDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Receta/{productoFinalId}": {
+      "get": {
+        "tags": [
+          "Receta"
+        ],
+        "parameters": [
+          {
+            "name": "productoFinalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Receta"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Receta"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Receta"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Receta/{id}": {
+      "put": {
+        "tags": [
+          "Receta"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Receta"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Receta"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Receta"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Receta"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Receta/ProductosConReceta": {
+      "get": {
+        "tags": [
+          "Receta"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -361,40 +770,41 @@
         }
       }
     },
-    "/api/Ventas": {
-      "post": {
+    "/api/Usuarios/{id}/password": {
+      "put": {
         "tags": [
-          "Ventas"
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "type": "string"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "type": "string"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "type": "string"
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Ventas"
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -402,58 +812,26 @@
         }
       }
     },
-    "/api/Ventas/{id}": {
-      "get": {
+    "/api/Venta": {
+      "post": {
         "tags": [
-          "Ventas"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Ventas"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
+          "Venta"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "$ref": "#/components/schemas/Venta"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "$ref": "#/components/schemas/Venta"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearVentaDto"
+                "$ref": "#/components/schemas/Venta"
               }
             }
           }
@@ -464,9 +842,47 @@
           }
         }
       },
+      "get": {
+        "tags": [
+          "Venta"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Venta"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Venta"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Venta"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Venta/{id}": {
       "delete": {
         "tags": [
-          "Ventas"
+          "Venta"
         ],
         "parameters": [
           {
@@ -489,30 +905,21 @@
   },
   "components": {
     "schemas": {
-      "CrearVentaDto": {
+      "Compra": {
         "type": "object",
         "properties": {
-          "usuarioId": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "comentarios": {
-            "type": "string",
-            "nullable": true
+          "proveedorId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "detalles": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DetalleVentaDto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DetalleVentaDto": {
-        "type": "object",
-        "properties": {
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
           "productoId": {
             "type": "integer",
             "format": "int32"
@@ -522,32 +929,6 @@
             "format": "int32"
           },
           "precioUnitario": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "IngredienteDetalleDTO": {
-        "type": "object",
-        "properties": {
-          "materiaPrimaId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nombreMateria": {
-            "type": "string",
-            "nullable": true
-          },
-          "cantidad": {
-            "type": "number",
-            "format": "double"
-          },
-          "costoUnitario": {
-            "type": "number",
-            "format": "double"
-          },
-          "subtotal": {
             "type": "number",
             "format": "double"
           }
@@ -568,103 +949,36 @@
         },
         "additionalProperties": false
       },
-      "MateriaPrima": {
+      "Producto": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
             "format": "int32"
           },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
           "descripcion": {
             "type": "string",
             "nullable": true
+          },
+          "precioVenta": {
+            "type": "number",
+            "format": "double"
           },
           "costoPromedio": {
             "type": "number",
             "format": "double"
           },
-          "cantidadStock": {
+          "stock": {
             "type": "integer",
             "format": "int32"
           },
-          "nombre": {
+          "categoria": {
             "type": "string",
             "nullable": true
-          },
-          "proveedorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "proveedor": {
-            "$ref": "#/components/schemas/Proveedor"
-          }
-        },
-        "additionalProperties": false
-      },
-      "MateriaPrimaDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "descripcion": {
-            "type": "string",
-            "nullable": true
-          },
-          "nombre": {
-            "type": "string",
-            "nullable": true
-          },
-          "costoPromedio": {
-            "type": "number",
-            "format": "double"
-          },
-          "cantidadStock": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "proveedorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "proveedorNombre": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProductoDetalleAdminDTO": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nombre": {
-            "type": "string",
-            "nullable": true
-          },
-          "descripcion": {
-            "type": "string",
-            "nullable": true
-          },
-          "imagenUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "receta": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IngredienteDetalleDTO"
-            },
-            "nullable": true
-          },
-          "costoTotal": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false
@@ -687,13 +1001,57 @@
           "direccion": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Receta": {
+        "required": [
+          "cantidad",
+          "id",
+          "productoComponenteId",
+          "productoFinalId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
           },
-          "materiasPrimas": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MateriaPrima"
-            },
-            "nullable": true
+          "productoFinalId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productoComponenteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RecetaDto": {
+        "required": [
+          "cantidad",
+          "productoComponenteId",
+          "productoFinalId"
+        ],
+        "type": "object",
+        "properties": {
+          "productoFinalId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productoComponenteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -724,6 +1082,36 @@
           "telefono": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Venta": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "productoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

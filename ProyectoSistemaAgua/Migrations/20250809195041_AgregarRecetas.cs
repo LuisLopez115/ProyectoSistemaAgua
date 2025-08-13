@@ -5,7 +5,7 @@
 namespace ProyectoSistemaAgua.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicialbd1 : Migration
+    public partial class AgregarRecetas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

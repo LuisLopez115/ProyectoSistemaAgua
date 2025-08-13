@@ -2,18 +2,12 @@
 {
     public class Venta
     {
+
         public int Id { get; set; }
-
-        public int UsuarioId { get; set; }
-        public Usuarios Usuario { get; set; }  
-
+        public int ClienteId { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Total { get; set; }
-
-        public string? Comentarios { get; set; }
-
-        public ICollection<DetalleVenta> Detalles { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
     }
-
-
 }
